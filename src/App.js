@@ -144,7 +144,7 @@ function App() {
       });
   }
 
-  
+
   //-------------------------ContractTokenBalance------------------------
   // let contractAddress = "0xb7a4F3E9097C08dA09517b5aB877F7a917224ede";    //Modify Contract Address here!!
   // async function erc20Balance() {
@@ -203,15 +203,16 @@ function App() {
     <div className="App" id="bg">
       <header className="App-header">
         <div className='button'>
-
-          <button id="balance-btn" hidden>
-            balance
-          </button>
-          <button id="connect-btn" onClick={connectWallet}>
-            Connect Wallet
-          </button>
-          <hr className='hr1' />
-          <h3 id="isConnected">No wallet connected, please connect your wallet</h3>
+          <div className="header">
+            <button id="balance-btn" hidden>
+              balance
+            </button>
+            <button id="connect-btn" onClick={connectWallet}>
+              Connect Wallet
+            </button>
+            <hr className='hr1' />
+            <h3 id="isConnected">Please connect <br/>your wallet</h3>
+          </div>
           <div className="tables">
             <table id="table1">
               <tbody>

@@ -45,8 +45,9 @@
 #connect-btn{
   font-family:fantasy;
   color: black;
+  flex: 2;
   position: fixed;
-  top: 20px;
+  top: 30px;
   right: 40px;
   background-color:wheat; 
   border-radius:30px;
@@ -61,7 +62,7 @@
   font-family:fantasy;
   color: black;
   position: fixed;
-  top: 20px;
+  top: 30px;
   right: 160px;
   background-color:wheat; 
   width: 80px;
@@ -78,7 +79,7 @@
 .hr1{
   color: black;
   position: fixed;
-  top: 80px;
+  top: 100px;
   right: 0px;
   width: 2000px;
   border: 2px solid;
@@ -86,12 +87,19 @@
 
 #isConnected{
   position: fixed;
-  top: 5px;
-  justify-content: center; 
+  top: 0px;
+  left: 30px;
   color: red;
+  flex: 1;  
+  justify-content: center; 
 }
 
 .button{
   justify-content: center; 
   align-items: center; 
+}
+
+.header{
+  display:flex;
+  top: 5px;
 }
