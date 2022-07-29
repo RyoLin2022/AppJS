@@ -74,3 +74,24 @@
   width: 400px;
   color: black;
 }
+
+.hr1{
+  color: black;
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  width: 2000px;
+  border: 2px solid;
+}
+
+#isConnected{
+  position: fixed;
+  top: 5px;
+  justify-content: center; 
+  color: red;
+}
+
+.button{
+  justify-content: center; 
+  align-items: center; 
+}

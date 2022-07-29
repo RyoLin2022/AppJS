@@ -46,9 +46,9 @@ function App() {
     var inWeiBal = balanceDEC.length;
     var balanceBtn = document.getElementById("balance-btn");
 
-    var str = Math.pow(10,(inWeiBal-22));
-    var rounded = Math.round(str*parseInt(balanceDEC.substring(0, 4))*10000)/10000;
-    balanceBtn.innerText = rounded + " BNB";  
+    var str = Math.pow(10, (inWeiBal - 22));
+    var rounded = Math.round(str * parseInt(balanceDEC.substring(0, 4)) * 10000) / 10000;
+    balanceBtn.innerText = rounded + " BNB";
   }
 
   async function connectWallet() {
@@ -144,13 +144,73 @@ function App() {
       });
   }
 
+  
+  //-------------------------ContractTokenBalance------------------------
+  // let contractAddress = "0xb7a4F3E9097C08dA09517b5aB877F7a917224ede";    //Modify Contract Address here!!
+  // async function erc20Balance() {
+  //   let accBalance = await window.ethereum.request({
+  //     method: "eth_call",
+  //     params:[{
+  //       to:contractAddress, 
+  //       data:"0x70a082310000000000000000000000006b25Cb9338b4cEC5632aFd12B905C9C25a71BB4b",
+  //       //BalanceOf:0x70a08231
+  //       //(account):0000000000000000000000006b25Cb9338b4cEC5632aFd12B905C9C25a71BB4b
+  //       },
+  //       "latest"
+  //     ]
+  //   });
+  //   var balanceDEC = Number(accBalance).toString(10);
+  //   console.log(balanceDEC);
+
+  //   var tokenDecimal = 6;
+  //   var inWeiBal = balanceDEC.length;
+  //   var balanceBtn = document.getElementById("test-btn");
+
+  //   var str = Math.pow(10, (inWeiBal - tokenDecimal-4));
+  //   var rounded = Math.round(str * parseInt(balanceDEC.substring(0, 4)) * 10000) / 10000;
+  //   balanceBtn.innerText = rounded + " USDT";
+  // }
+
+
+
+
+
+
+
+
+  //--------------------------ContractEthBalance-------------------------
+  //Works appropriately
+  // let contractAddress = "0x6b25Cb9338b4cEC5632aFd12B905C9C25a71BB4b";    //Modify Contract Address here!!
+  // async function ContractEthBalance() {
+  //   let accBalance = await window.ethereum.request({
+  //     method: "eth_getBalance",
+  //     params:
+  //       [contractAddress, 'latest']
+  //   });
+  //   var balanceDEC = Number(accBalance).toString(10);
+  //   console.log(balanceDEC);
+  //   var inWeiBal = balanceDEC.length;
+  //   var balanceBtn = document.getElementById("test-btn");
+
+  //   var str = Math.pow(10, (inWeiBal - 22));
+  //   var rounded = Math.round(str * parseInt(balanceDEC.substring(0, 4)) * 10000) / 10000;
+  //   balanceBtn.innerText = rounded + " BNB";
+  // }
+  //--------------------------ContractEthBalance-------------------------
+
+
   return (
     <div className="App" id="bg">
       <header className="App-header">
         <div className='button'>
+
+          <button id="balance-btn" hidden>
+            balance
+          </button>
           <button id="connect-btn" onClick={connectWallet}>
             Connect Wallet
           </button>
+          <hr className='hr1' />
           <h3 id="isConnected">No wallet connected, please connect your wallet</h3>
           <div className="tables">
             <table id="table1">
@@ -177,14 +237,10 @@ function App() {
                 </tr>
               </tbody>
             </table>
-{/* 
-            <button id="test-btn" onClick={test}>
+
+            {/* <button id="test-btn" onClick={erc20Balance}>
               test
             </button> */}
-
-            <button id="balance-btn" hidden>
-              balance
-            </button>
           </div>
         </div>
       </header>
